@@ -11,3 +11,14 @@ services:
       - ./dags:/opt/airflow/dags
     ports:
       - "8080:8080"
+
+  postgres:
+    container_name: postgres_demo
+    network_mode: host
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: super_admin
+      POSTGRES_PASSWORD: 12345
+      PGDATA: /data/postgres
+    volumes:
+      - ./postgres/postgres-db:/data/postgres
