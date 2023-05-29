@@ -13,12 +13,12 @@ dag = DAG(
 
 t1 = BashOperator(
     task_id='dbt-1',
-    bash_command='dbt run --models dbt-1',
+    bash_command='dbt run --models dbt-1 --projects_dir /opt/dbt/profiles.yml',
     dag=dag)
 
 t2 = BashOperator(
     task_id='dbt-2',
-    bash_command='dbt run --models dbt-2',
+    bash_command='dbt run --models dbt-2 --projects_dir /opt/dbt/profiles.yml',
     dag=dag)
 
 t1 >> t2

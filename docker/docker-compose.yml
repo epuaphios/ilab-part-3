@@ -1,16 +1,5 @@
 version: '3'
 services:
-  dbt:
-    build: ./dbt
-    volumes:
-      - ./dbt:/dbt
-
-  airflow:
-    build: ./airflow
-    volumes:
-      - ./dags:/opt/airflow/dags
-    ports:
-      - "8080:8080"
 
   postgres:
     container_name: postgres_demo
@@ -22,3 +11,10 @@ services:
       PGDATA: /data/postgres
     volumes:
       - ./postgres/postgres-db:/data/postgres
+
+  airflow:
+    build: ./airflow
+    volumes:
+      - ./dags:/opt/airflow/dags
+    ports:
+      - "8080:8080"
