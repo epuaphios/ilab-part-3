@@ -1,15 +1,14 @@
 from airflow import DAG
-from airflow.operators.bash_operator import BashOperator
+from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
+import subprocess
 
-default_args = {
-    'owner': 'airflow',
-    'depends_on_past': False
-}
 
 dag = DAG(
-    'dbt_dag', default_args=default_args, schedule_interval=timedelta(1), schedule="@continuous", max_active_runs=1,
-    catchup=False,
+    'my_dag',
+    schedule_interval='0 10 * * *',
+    start_date=datetime(2023, 5, 29),
+    catchup=False
 )
 
 t1 = BashOperator(
