@@ -1,0 +1,24 @@
+part3:
+  outputs:
+
+    dev:
+      type: postgres
+      threads: 1
+      host: 10.250.12.40
+      port: 5432
+      user: super_admin
+      pass: "12345"
+      dbname: postgres
+      schema: public
+
+    prod:
+      type: postgres
+      threads: 1
+      host: 10.250.12.40
+      port: 5432
+      user: super_admin
+      pass: "12345"
+      dbname: postgres
+      schema: public
+
+  target: dev

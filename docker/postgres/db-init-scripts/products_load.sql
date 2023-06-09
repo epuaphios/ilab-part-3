@@ -1,0 +1,1 @@
+ COPY products FROM '/csv/products.csv' DELIMITER ',' CSV HEADER;

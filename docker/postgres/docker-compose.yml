@@ -11,3 +11,4 @@ services:
       PGDATA: /data/postgres
     volumes:
       - ./postgres-db:/data/postgres
+      - ./csv:/opt/csv

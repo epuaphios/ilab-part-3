@@ -1,0 +1,37 @@
+[2023-06-09 13:40:07,608] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: my_dag.dbt-1 manual__2023-06-09T13:40:06.352040+00:00 [queued]>
+[2023-06-09 13:40:07,615] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: my_dag.dbt-1 manual__2023-06-09T13:40:06.352040+00:00 [queued]>
+[2023-06-09 13:40:07,615] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-09 13:40:07,615] {taskinstance.py:1244} INFO - Starting attempt 1 of 1
+[2023-06-09 13:40:07,615] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-09 13:40:07,628] {taskinstance.py:1264} INFO - Executing <Task(BashOperator): dbt-1> on 2023-06-09 13:40:06.352040+00:00
+[2023-06-09 13:40:07,632] {standard_task_runner.py:52} INFO - Started process 5540 to run task
+[2023-06-09 13:40:07,634] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'my_dag', 'dbt-1', 'manual__2023-06-09T13:40:06.352040+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpe5y0blll', '--error-file', '/tmp/tmpumgja0qt']
+[2023-06-09 13:40:07,634] {standard_task_runner.py:77} INFO - Job 27: Subtask dbt-1
+[2023-06-09 13:40:07,674] {logging_mixin.py:109} INFO - Running <TaskInstance: my_dag.dbt-1 manual__2023-06-09T13:40:06.352040+00:00 [running]> on host d78e0722255b
+[2023-06-09 13:40:07,718] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=my_dag
+AIRFLOW_CTX_TASK_ID=dbt-1
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-09T13:40:06.352040+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-06-09T13:40:06.352040+00:00
+[2023-06-09 13:40:07,719] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-09 13:40:07,719] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'dbt run --models dbt-1 --profiles-dir /opt/***/dbt/part3/ --project-dir /opt/***/dbt/part3/']
+[2023-06-09 13:40:07,726] {subprocess.py:85} INFO - Output:
+[2023-06-09 13:40:09,978] {subprocess.py:89} INFO - [0m13:40:09  Running with dbt=1.5.1
+[2023-06-09 13:40:10,078] {subprocess.py:89} INFO - [0m13:40:10  Unable to do partial parsing because of a version mismatch
+[2023-06-09 13:40:10,920] {subprocess.py:89} INFO - [0m13:40:10  [[33mWARNING[0m]: Did not find matching node for patch with name 'dbt-1' in the 'models' section of file 'models/schema.yml'
+[2023-06-09 13:40:10,923] {subprocess.py:89} INFO - [0m13:40:10  [[33mWARNING[0m]: Did not find matching node for patch with name 'dbt-2' in the 'models' section of file 'models/schema.yml'
+[2023-06-09 13:40:10,950] {subprocess.py:89} INFO - [0m13:40:10  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2023-06-09 13:40:10,950] {subprocess.py:89} INFO - There are 1 unused configuration paths:
+[2023-06-09 13:40:10,950] {subprocess.py:89} INFO - - models.part3.example
+[2023-06-09 13:40:10,963] {subprocess.py:89} INFO - [0m13:40:10  Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[2023-06-09 13:40:10,964] {subprocess.py:89} INFO - [0m13:40:10  The selection criterion 'dbt-1' does not match any nodes
+[2023-06-09 13:40:10,965] {subprocess.py:89} INFO - [0m13:40:10
+[2023-06-09 13:40:10,965] {subprocess.py:89} INFO - [0m13:40:10  Nothing to do. Try checking your model configs and model specification args
+[2023-06-09 13:40:11,858] {subprocess.py:93} INFO - Command exited with return code 0
+[2023-06-09 13:40:11,882] {taskinstance.py:1282} INFO - Marking task as SUCCESS. dag_id=my_dag, task_id=dbt-1, execution_date=20230609T134006, start_date=20230609T134007, end_date=20230609T134011
+[2023-06-09 13:40:11,936] {local_task_job.py:154} INFO - Task exited with return code 0
+[2023-06-09 13:40:11,959] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

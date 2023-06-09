@@ -1,6 +1,5 @@
 version: '3'
 services:
-
   postgres:
     container_name: postgres_demo
     network_mode: host
@@ -11,10 +10,14 @@ services:
       PGDATA: /data/postgres
     volumes:
       - ./postgres/postgres-db:/data/postgres
+      - ./postgres/db-init-scripts:/docker-entrypoint-initdb.d
+      - ./postgres/csv:/csv
+
 
   airflow:
     build: ./airflow
     volumes:
       - ./dags:/opt/airflow/dags
+      - ./dbt:/opt/airflow/dbt
     ports:
       - "8080:8080"
